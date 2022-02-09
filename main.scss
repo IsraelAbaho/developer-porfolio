@@ -10,14 +10,14 @@
 }
 
 :root {
-  --primaryColor: hsl(185, 100%, 50%);
+  --primaryColor: #00eaff;
   --primaryHover: hsl(185, 92%, 41%);
   --secondaryColor: rgb(150, 162, 188);
   --paragraphColor: rgb(127, 127, 175);
-  --BgColor: hsl(210, 88%, 10%);
+  --BgColor: #031a30;
   --formColor: rgb(2, 15, 29);
-  --projectCardColor: rgb(7, 35, 64);
-  --textColor: rgb(220, 229, 251);
+  --projectCardColor: #072340;
+  --textColor: #dae4fb;
   --headerHeight: 3rem;
 }
 
@@ -157,14 +157,17 @@ video {
   .navBar {
     position: absolute;
     top: -700%;
-    right: 0;
-    left: 0;
+    right: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
     background: var(--formColor);
     padding: 1rem 0;
     transition: 0.6s;
     z-index: 150;
     backdrop-filter: blur(5px);
-    border-bottom: 2px solid var(--primaryColor);
+    border-radius: 10px;
+    border: 2px solid var(--primaryColor);
   }
 }
 
@@ -282,7 +285,7 @@ video {
 }
 
 .show {
-  top: 0;
+  top: 250px;
 }
 
 // Home section CSS
@@ -388,7 +391,7 @@ video {
   font-size: 20px;
   padding: 8px 17px;
   display: none;
-  &:hover{
+  &:hover {
     opacity: 1;
   }
 
@@ -595,93 +598,35 @@ video {
 }
 
 // SKILLS SECTION
-
+.skillDescription {
+  color: var(--secondaryColor);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1rem;
+  padding: 2rem 0 0;
+}
 .skillsContent {
   margin: 2rem 0 0;
-
-  .contentData {
-    padding: 1.5rem 0;
-  }
-
-  .skillHeader {
-    margin-bottom: 1rem;
-
-    .skillName {
-      color: var(--textColor);
-    }
-    .skillSubName {
-      font-size: 1rem;
-      color: var(--secondaryColor);
-    }
-  }
-
-  .skillsData {
-    gap: 1rem;
-    margin-bottom: 1rem;
-    .skillsDesc {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0.5rem;
-
+  display: grid;
+  gap: 1rem;
+  .skillInfo {
+    .skillInfoHeader {
+      margin: 1rem 0;
       .skillTitle {
-        font-size: 1rem;
-        color: var(--primaryColor);
+        color: var(--textColor);
       }
-
-      .skillsNumber {
-        font-size: 1rem;
-        color: var(--paragraphColor);
+      .skillSubTotal {
+        color: var(--secondaryColor);
         font-weight: 600;
       }
     }
 
-    .skillBar,
-    .skillsPercentage {
-      height: 5px;
-      border-radius: 1rem;
-    }
-
-    .skillBar {
-      background: var(--secondaryColor);
-    }
-
-    .skillsPercentage {
-      display: block;
-      background: var(--primaryColor);
-    }
-
-    .skillsHtml {
-      width: 85%;
-    }
-    .skillsCSS {
-      width: 80%;
-    }
-    .skillsSCSS {
-      width: 80%;
-    }
-    .skillsJs {
-      width: 50%;
-    }
-    .skillsGgl {
-      width: 90%;
-    }
-    .skillsXD {
-      width: 80%;
-    }
-    .skillsFigma {
-      width: 75%;
-    }
-    .skillsPS {
-      width: 85%;
-    }
-    .skillsAE {
-      width: 75%;
-    }
-    .skillsPP {
-      width: 85%;
-    }
-    .skillsYC {
-      width: 90%;
+    .skillImage {
+      margin: 1rem 0;
+      .skillImageIcon {
+        width: 40px;
+        margin: 0.5rem 0.5rem 0 0;
+      }
     }
   }
 }
@@ -710,7 +655,7 @@ video {
 
 .projectFooter {
   display: flex;
-  margin: 2rem auto 0;
+  margin: 2rem auto;
   justify-content: center;
 
   a {
@@ -828,6 +773,15 @@ video {
           border: 2px solid crimson;
           transform: translate(-4.5px, -4.5px);
           animation: indicator 0.5s ease-in-out infinite;
+        }
+
+        .live {
+          flex: 1;
+          margin-left: 0.6rem;
+          color: crimson;
+          span {
+            font-weight: 800;
+          }
         }
       }
 
@@ -1005,6 +959,67 @@ form {
   }
 }
 
+// Archives Section CSS.....
+.titleSubText {
+  color: var(--primaryHover);
+  padding-bottom: 1rem;
+}
+
+.otherProjectsContainer {
+  margin-top: 4rem;
+
+  table {
+    width: 100%;
+    text-align: left;
+
+    // padding-left: 1rem;
+
+    .containerTitle {
+      margin-bottom: 1rem;
+
+      th {
+        color: var(--secondaryColor);
+        font-weight: 800;
+        font-size: 18px;
+        padding-bottom: 1rem;
+      }
+    }
+
+    .projectListItem {
+      font-size: 18px;
+      td {
+        padding: 0.5rem 0;
+      }
+
+      .itemYear {
+        color: var(--primaryColor);
+      }
+      .itemName a {
+        color: var(--textColor);
+        font-weight: 800;
+        &:hover {
+          color: var(--primaryHover);
+        }
+      }
+
+      .itemTech {
+        color: var(--paragraphColor);
+      }
+
+      .itemLinks {
+        display: flex;
+        align-items: center;
+        .wrapperLink {
+          color: var(--secondaryColor);
+          &:hover {
+            color: (var(--primaryColor));
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 368px) {
   .ctaDescription {
     text-align: justify;
@@ -1020,6 +1035,17 @@ form {
 
   .boxes {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  table {
+    .containerTitle {
+      th {
+        font-size: 20px !important;
+      }
+    }
+    .projectListItem {
+      font-size: 20px !important;
+    }
   }
 }
 
@@ -1070,7 +1096,7 @@ form {
   }
 
   .contactContent {
-    grid-template-columns: 200px 400px;
+    grid-template-columns: 400px 400px;
     column-gap: 3rem;
     justify-content: center;
     margin-top: 5rem;
@@ -1179,6 +1205,18 @@ form {
       padding: 1rem 4rem;
     }
   }
+
+  .archiveSection {
+    .titleSubText {
+      font-size: 20px;
+    }
+    .underline {
+      margin-top: 1rem;
+    }
+    .titleText {
+      font-size: 45px !important;
+    }
+  }
   .contentText {
     .introTxt {
       font-size: 1.2rem !important;
@@ -1203,6 +1241,12 @@ form {
 }
 
 @media screen and (min-width: 1240px) {
+  .skillsContent {
+    grid-template-columns: repeat(3, 1fr);
+    .skillInfo {
+      margin: auto;
+    }
+  }
   .contentText {
     .introTxt {
       font-size: 1.3rem !important;
@@ -1241,4 +1285,10 @@ form {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primaryHover);
+}
+
+
+::selection{
+  background: var(--BgColor);
+  color: var(--primaryColor);
 }

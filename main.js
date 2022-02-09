@@ -1,3 +1,4 @@
+
 const navBtn = document.getElementById('nav-Bar');
 const toggleBtn = document.getElementById('toggleId');
 const closeBtn = document.getElementById('closeIconID');
@@ -86,6 +87,28 @@ function showBtn (){
     }
 }
 window.addEventListener('scroll', showBtn)
+
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '40px',
+    duration: 2000,
+    reset: true
+})
+
+sr.reveal(`.home`, {
+    interval: 200
+})
+
+sr.reveal(`.leftCol`, {
+    origin: 'left',
+    distance: '60px',
+    interval: 300
+})
+sr.reveal(`.rightCol`, {
+    origin: 'right',
+    distance: '60px',
+    interval: 300
+})
 
 
 
